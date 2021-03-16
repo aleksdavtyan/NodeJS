@@ -1,0 +1,19 @@
+console.log(__dirname);
+console.log(__filename);
+console.log(__filename.length);
+
+const random = require('random');
+const currentTime = require('./modules/current-time');
+const wordsFromString = require('./modules/words-from-string');
+const charOneSecondOutput = require('./modules/char-one-second-output')
+
+//
+// for (let i = 0; i < 5; i++) {
+//     console.log(random.int(0,100));
+// }
+
+currentTime();
+wordsFromString('This is a ./Pa$$worD/ & you can [GU$$#] it.')
+charOneSecondOutput('Alex');
+
+
