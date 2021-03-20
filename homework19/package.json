@@ -1,7 +1,0 @@
-{
-  "name": "files-git",
-  "version": "1.0.0",
-  "dependencies": {
-    "random": "^3.0.3"
-  }
-}
