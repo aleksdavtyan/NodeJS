@@ -14,15 +14,3 @@ fs.open('./homework3.txt', 'r+', (err, openedFile) => {
     });
 });
 
-
-// class RemoveSpecialChars extends Transform {
-//     _transform(chunk, encoding, callback) {
-//         this.push(chunk.toString().replace(regExp, ''));
-//         callback();
-//     }
-// }
-// const transform = new RemoveSpecialChars();
-// const readStream = fs.createReadStream('./homeworkr5.txt');
-// const writeStream = fs.createWriteStream('./homeworkw5.txt');
-//
-// readStream.pipe(transform).pipe(writeStream);
