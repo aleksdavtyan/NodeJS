@@ -9,7 +9,9 @@ fs.open('./homework3.txt', 'r+', (err, openedFile) => {
         console.log(bytesRead);
         console.log(buffer.slice(0, bytesRead.toString()));
     });
-    fs.write(openedFile, buffer, buffer.slice(0, bytesRead), 0, buffer.slice(0, bytesRead).length);
+    fs.write(openedFile, buffer, buffer.slice(0, bytesRead), 0, buffer.slice(0, bytesRead).length, (err, bytesRead) => {
+
+    });
 });
 
 
