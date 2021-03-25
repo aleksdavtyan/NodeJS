@@ -20,7 +20,7 @@ const server = http.createServer((request, response) => {
     if (urlObj.pathname === '/filter') {
         for (let user of userData) {
             if (user.first_name === queryParams.first_name && user.last_name === queryParams.last_name) {
-                console.log(user);
+                response.end(JSON.stringify(user));
             }
         }
     }
