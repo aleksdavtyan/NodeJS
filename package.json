@@ -1,5 +1,5 @@
 {
-  "name": "files-git",
+  "name": "fs-git",
   "version": "1.0.0",
   "dependencies": {
     "random": "^3.0.3"
