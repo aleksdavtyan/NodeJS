@@ -8,23 +8,21 @@ const fs = require('fs');
 const userDB = require('./user.json'); // getting Json file content as an Object
 
 const userData = [...userDB];
-console.log(userDB);
+//console.log(userDB);
 // localhost:3000/filter?first_name=Alex&last_name=Davtyan
 
 const server = http.createServer((request, response) => {
 
     const urlObj = url.parse(request.url, true);
     const queryParams = urlObj.query;
-    console.log(urlObj);
-    console.log(queryParams);
+    // console.log(urlObj);
+    // console.log(queryParams);
     if (urlObj.pathname === '/filter') {
-        for (let user of userDB){
-            for (let userKey in user) {
-                userKey === ''
-            }
+        for (let user of userData) {
+            if (user.first_name === queryParams[0] && user.last_name === queryParams[1])
+                console.log(user);
         }
     }
-
 });
 
 server.listen(3000);
