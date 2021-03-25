@@ -15,12 +15,13 @@ const server = http.createServer((request, response) => {
 
     const urlObj = url.parse(request.url, true);
     const queryParams = urlObj.query;
-    // console.log(urlObj);
-    // console.log(queryParams);
+    console.log(queryParams);
+
     if (urlObj.pathname === '/filter') {
         for (let user of userData) {
-            if (user.first_name === 'Alex' && user.last_name === 'Davtyan')
+            if (user.first_name === queryParams.first_name && user.last_name === queryParams.last_name) {
                 console.log(user);
+            }
         }
     }
 });
