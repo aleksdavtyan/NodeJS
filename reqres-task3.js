@@ -19,7 +19,7 @@ const server = http.createServer((request, response) => {
     // console.log(queryParams);
     if (urlObj.pathname === '/filter') {
         for (let user of userData) {
-            if (user.first_name === queryParams[0] && user.last_name === queryParams[1])
+            if (user.first_name === 'Alex' && user.last_name === 'Davtyan')
                 console.log(user);
         }
     }
