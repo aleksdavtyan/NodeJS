@@ -1,0 +1,2 @@
+Իրադարձությունների մշակողները կարող են օգտագործվել օգտվողի մուտքի, օգտագործողի գործողությունների և զննարկչի գործողությունները կարգավորելու և ստուգելու համար.
+Event handlers can be used to handle and verify user input, user actions, and browser actions:
