@@ -6,17 +6,16 @@ const readable = fs.createReadStream('Homeworks.txt', {
     encoding: 'utf-8',
 });
 
-let content  = readable.on("data", (chunk) => {
-    console.log(chunk);
-});
-
 const customEvent = new EventEmitter();
 
-customEvent.on('homework', (data) => {
-    console.log(data);
+customEvent.on('homework', () => {
+    console.log('homework event fired!')
+    readable.on("data", (chunk) => {
+        console.log(chunk);
+    });
 })
 
-customEvent.emit('homework', content);
+customEvent.emit('homework');
 
 
 
