@@ -7,22 +7,21 @@ const url = require('url');
 const fs = require('fs');
 const userDB = require('./user.json'); // getting Json file content as an Object
 
-const userData = [...userDB];
 //console.log(userDB);
-// localhost:3000/filter?first_name=Alex&last_name=Davtyan
+// localhost:3000/filter?=Alex
 
 const server = http.createServer((request, response) => {
 
-    const urlObj = url.parse(request.url, true);
-    const queryParams = urlObj.query;
-    console.log(queryParams);
+    const reqURL = new URL(request.url, 'http://localhost:3000/');
+    const filter = reqURL.searchParams.get('filter');
 
-    if (urlObj.pathname === '/filter') {
-        for (let user of userData) {
-            if (user.first_name === queryParams.first_name && user.last_name === queryParams.last_name) {
-                response.end(JSON.stringify(user));
-            }
-        }
+    if (filter) {
+        response.end(JSON.stringify(userDB.filter(user => {
+            return user['first_name'].includes(filter) || user['last_name'].includes(filter);
+        })));
+    } else {
+        response.writeHead(404);
+        response.end('User Not Found.')
     }
 });
 
