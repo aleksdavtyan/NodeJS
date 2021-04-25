@@ -1,2 +1,2 @@
 Express.js vs Node.js
-This text was gotten from sunny.txt file.
+This text was got from sunny.txt file.
